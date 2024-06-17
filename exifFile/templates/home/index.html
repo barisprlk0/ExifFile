@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %} Home {% endblock title %} Home
+{% block body %}
+
+<div class="container">
+    <h1 class="display-1 text-center mt-5 "> Upload & Meet </h1>
+<br><div class="row">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-6">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form }}
+    </div>
+    <div class="col-sm-2">
+        <button type="submit" class="btn btn-outline-danger">Upload File</button>
+    </div>
+    <div class="col-sm-2"></div>
+        </form>
+</div>
+
+</div>
+
+<div class="row mt-4">
+    <div class="col-sm-2"> </div>
+    <div class="col-sm-4">
+        <div class="card imageProporties">
+            <div class="card-header bg-danger">
+                <h5 class="text-center text-white"> Image Proporties </h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 "><b class="fs-5">Width:</b></div>
+                <div class="col-sm-6">{{width_value}}</div>
+
+                
+                <div class="col-sm-6"><b class="fs-5">Height:</b></div>
+                <div class="col-sm-6">{{width_value}}</div>
+
+                <div class="col-sm-6"><b class="fs-5">DateTime:</b></div>
+                <div class="col-sm-6">{{date_value}}</div>
+
+
+                <div class="col-sm-6"><b class="fs-5">ResolutionUnit:</b></div>
+                <div class="col-sm-6">{{reso_value}}</div>
+
+
+                <div class="col-sm-6"><b class="fs-5">WhiteBalance:</b></div>
+                <div class="col-sm-6">{{wb_value}}</div>
+
+
+                <div class="col-sm-6"><b class="fs-5">Flash:</b></div>
+                <div class="col-sm-6">{{flash_value}}</div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="card">
+            <div class="card-header bg-danger">
+                <h5 class="text-center text-white"> Technical Proporties </h3>
+            </div>
+            <div class="row">
+                <div class="col-sm-6"><b class="fs-5">Make</b></div>
+                <div class="col-sm-6">{{make_value}}</div>
+
+                <div class="col-sm-6"><b class="fs-5">Model</b></div>
+                <div class="col-sm-6">{{model_value}}</div>
+
+
+                <div class="col-sm-6"><b class="fs-5">F-Number</b></div>
+                <div class="col-sm-6">{{fnumber_value}}</div>
+
+
+                <div class="col-sm-6"><b class="fs-5">Software</b></div>
+                <div class="col-sm-6">{{software_value}}</div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+</div>
+{% endblock %}
